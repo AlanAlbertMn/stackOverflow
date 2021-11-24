@@ -24,7 +24,15 @@ require_once 'database.php';
                 <a class="navbar-brand" href="index.php">
                     <img src="img/stackImg.jpg" alt="" width="220" height="10">
                 </a>
-                <a href="login.php">Login</a>
+                <?php
+                if(!$_SESSION['auth']){
+                echo '<a href="login.php">Login</a>';
+                }
+                else{
+                    echo '<a href="logout.php">Logout</a>';
+                }
+
+                ?>
             </div>
         </nav>
     </header>

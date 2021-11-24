@@ -19,7 +19,7 @@ function stringSanitizer($stringSanitizado)
 $idError = null;
 $contentError = null;
 $idQ = null;
-$idUserLogged = 1;
+$idUserLogged = $_SESSION['idUser'];
 echo $idUserLogged;
 
 if (!empty($_GET['idQ'])) {

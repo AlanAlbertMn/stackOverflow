@@ -14,7 +14,8 @@ if ($_POST) {
     if (mysqli_num_rows($result) == 1) {
         session_start();
         $_SESSION['auth'] = 'true';
-        
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $_SESSION['idUser'] = $row["idUser"];
         header('location:index.php');
     } else {
         echo 'Wrong username or password';
